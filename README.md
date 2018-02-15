@@ -32,6 +32,9 @@ debug \<main-program\> \<checker-program\> \<rig-program\> \[\<number-of-inputs\
 *testing java program against python rig for 1000 cases and 2s time limit (per case) for the main (java) program*     
 debug Main.class Main.class rig.py 1000 2
 
+# Sample
+![alt text](https://github.com/sidhantnagpal/bash-tester/blob/master/sample/sample.png "Sample")
+
 # Setup   
 1. Copy & Place the scripts (.sh) files in your bin folder (or a folder where you keep other scripts).
 2. Open a terminal in the bin folder and execute the following commands granting the scripts permission to execute:    
