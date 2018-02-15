@@ -1,0 +1,30 @@
+#!/bin/bash
+var=$1
+filename="${var%.*}"
+extension="${var##*.}"
+ml=6400
+if [ "$extension" != "class" ]; then
+ml=512
+	if [ $ml -ge 1024 ]; then
+		ml=1600 # 1024M
+	elif [ $ml -ge 512 ]; then
+		ml=800 # 512M
+	else
+		ml=400 # 256M
+	fi
+fi
+ml=$(($ml*1000))
+ulimit -v $ml
+if [ "$filename" == "$extension" ]; then
+	/usr/bin/time -f "\nMemory : %Mkb\nTime   : %es" ./$filename
+elif [ "$extension" == "py" ]; then
+	/usr/bin/time -f "\nMemory : %Mkb\nTime   : %es" python $var
+elif [ "$extension" == "class" ]; then
+	/usr/bin/time -f "\nMemory : %Mkb\nTime   : %es" java $filename
+else
+	echo "invalid file"
+	exit 127
+fi
+exit $?
+# MLE - SIGSEGV/BAD_ALLOC
+# TLE - SIGKILL/SIGNAL_9

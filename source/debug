@@ -1,0 +1,62 @@
+#!/bin/bash
+N=100
+TL=3
+PRG=$1
+CHK=$2
+RIG=$3
+if [ "$#" -eq 4 ]; then
+	N=$4
+elif [ "$#" -eq 5 ]; then
+	N=$4
+	TL=$5
+fi
+
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+CYAN=$(tput setaf 6)
+NORMAL=$(tput sgr0)
+
+for((i=1;i<=$N;++i))do
+	bash -c "run $RIG >c 2>/dev/null" 2>/dev/null
+	if (($?!=0)); then
+		echo "$RIG: ${CYAN}RE${NORMAL}"
+		exit
+	fi
+
+	if [ "$CHK" != "$PRG" ]; then
+		bash -c "run $CHK <c >b 2>/dev/null" 2>/dev/null
+		if (($?!= 0)); then
+			echo "$CHK: ${CYAN}RE${NORMAL}"
+			exit
+		fi
+	fi
+	printf "Test   : %s " "$i"
+	/usr/bin/time -f "\nMemory : %Mkb\nTime   : %es" bash -c "ulimit -t $TL && run $PRG <c >a 2>/dev/null"
+	RET=$?
+	printf "Verdict: "
+	if (($RET==137)); then
+		echo "${YELLOW}TLE${NORMAL}"
+		exit $RET
+	elif (($RET==134)); then
+		echo "${BLUE}SIGSEGV/MLE${NORMAL}"
+		exit $RET
+	elif (($RET!=0)); then
+		echo "${CYAN}RE${NORMAL}"
+		exit $RET
+	else
+		if [ "$CHK" != "$PRG" ]; then
+			sdiff a b > /dev/null
+			if (($?!=0)); then
+				echo "${RED}WA${NORMAL}"
+				exit 1
+			else
+				echo "${GREEN}AC${NORMAL}"
+			fi
+		else
+			echo "${GREEN}PASS${NORMAL}"
+		fi
+	fi
+	printf "\n"
+done

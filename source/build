@@ -1,0 +1,19 @@
+#!/bin/bash
+for var in "$@"
+do
+	filename="${var%.*}"
+	extension="${var##*.}"
+	if [ "$extension" == "cpp" ]; then
+		g++ -g -Wno-unused-result -Wfatal-errors -std=c++14 -O2 $var -o $filename
+	elif [ "$extension" == "py" ]; then
+		python -m py_compile $var && rm -f ${file_base_name}.pyc
+	elif [ "$extension" == "java" ]; then
+		javac -g $var
+	else
+		echo "invalid file"
+		exit 127
+	fi
+	if (($?!= 0)); then
+		exit $?
+	fi
+done
