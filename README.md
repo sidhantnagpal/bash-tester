@@ -35,9 +35,9 @@ debug Main.class Main.class rig.py 1000 2
 # Setup   
 1. Copy & Place the scripts (.sh) files in your bin folder (or a folder where you keep other scripts).
 2. Open a terminal in the bin folder and execute the following commands granting the scripts permission to execute:    
-chmod +x build.sh
-chmod +x run.sh    
-chmod +x debug.sh   
+chmod +x build     
+chmod +x run     
+chmod +x debug     
 3. To access the scripts from anywhere in the system, copy the path to the bin folder and append it to .bashrc file:    
 sudo nano \~/.bashrc    
 Add the following line at the end (assuming your bin folder is on the desktop):   
