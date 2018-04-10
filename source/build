@@ -8,7 +8,7 @@ do
 	elif [ "$extension" == "py" ]; then
 		python -m py_compile $var && rm -f ${file_base_name}.pyc
 	elif [ "$extension" == "java" ]; then
-		javac -g $var
+		javac $var
 	else
 		echo "invalid file"
 		exit 127
