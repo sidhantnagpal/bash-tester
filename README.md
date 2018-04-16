@@ -33,6 +33,7 @@ debug \<main-program\> \<checker-program\> \<rig-program\> \[\<number-of-inputs\
 debug Main.class Main.class rig.py 1000 2
 
 # Sample
+The terminal shows error handling/compile error messages natively when using the scripts.
 ![alt text](https://github.com/sidhantnagpal/bash-tester/blob/master/sample/sample.png "Sample")
 
 # Setup   
