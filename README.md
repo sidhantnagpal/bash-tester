@@ -53,4 +53,4 @@ Add the following line at the end (assuming your bin folder is on the desktop):
 Feel free to ping me via [email](mailto:sidhantnagpal97@gmail.com)! :)     
      
 # License
-MIT © [Sidhant Nagpal](mailto:sidhantnagpal97@gmail.com)  
+MIT
