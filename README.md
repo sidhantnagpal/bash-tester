@@ -18,12 +18,12 @@ Java (`jdk`)
 
 *to execute the programs with time and memory usage statistics*   
 *and limit on memory usage (virtual limit for cpp and py, as jvm has its own memory management)*       
-`run main` - no extension assumes c++ program (elf format)   
-`run main.py` - interprets the python program line-by-line    
-`run Main.class` - executes the java program
+`run main` - no extension assumes c++ application (elf format)   
+`run main.py` - interprets the python program    
+`run Main.class` - executes the java application
 
 *to debug or stress-test program (written in C++/Python/Java)*    
-*the required programs - one main program, one checker program, and one Random Input Generator (rig) program*    
+*the required programs - a main program, a checker program, and a Random Input Generator (rig) program*    
 `debug main check.class rig.py`      
 `debug <main-program> <checker-program> <rig-program> [<number-of-inputs> [<time-limit-for-main>]]`     
 *tips for debug script*    
