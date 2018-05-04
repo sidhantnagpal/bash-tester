@@ -14,7 +14,7 @@ Java (`jdk`)
 `build main.cpp` - compiles the cpp file and generates the executable if no error is caught
 `build main.py` - performs a syntax-check of the py file    
 `build Main.java` - compiles the java file and renders the bytecode in class file if no error is caught     
-`build file1 \[file2 \[file3...\[fileN\]..\]\]` - to build multiple files at once    
+`build file1 [file2 [file3...[fileN]...]]` - to build multiple files at once    
 
 *to execute the programs with time and memory usage statistics*   
 *and limit on memory usage (virtual limit for cpp and py, as jvm has its own memory management)*       
@@ -25,7 +25,7 @@ Java (`jdk`)
 *to debug or stress-test program (written in C++/Python/Java)*    
 *the required programs - one main program, one checker program, and one Random Input Generator (rig) program*    
 `debug main check.class rig.py`      
-`debug \<main-program\> \<checker-program\> \<rig-program\> \[\<number-of-inputs\> \[\<time-limit-for-main\>\]\]`     
+`debug <main-program> <checker-program> <rig-program> [<number-of-inputs> [<time-limit-for-main>]]`     
 *tips for debug script*    
 1. square brackets denote optional arguments    
 2. the main program can be heurestically tested (for out-of-bounds error, runtime exceptions and other errors) against the rig program by setting main-program = checker-program    
