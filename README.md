@@ -45,9 +45,9 @@ chmod +x run
 chmod +x debug
 ```
 3. To access the scripts from anywhere in the system, copy the path to the bin folder and append it to .bashrc file:    
-`sudo nano \~/.bashrc`    
+`sudo nano ~/.bashrc`    
 Add the following line at the end (assuming your bin folder is on the desktop):   
-`export PATH=$PATH:\~/Desktop/bin`    
+`export PATH=$PATH:~/Desktop/bin`    
 
 # How to Contribute?
 Feel free to ping me via [email](mailto:sidhantnagpal97@gmail.com)! :)     
