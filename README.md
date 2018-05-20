@@ -38,7 +38,7 @@ The terminal shows error handling/compile error messages natively when using the
 
 # Setup   
 1. Copy & Place the scripts (.sh) files in your bin folder (or a folder where you keep other scripts).
-2. Open a terminal in the bin folder and execute the following commands granting the scripts permission to execute:    
+2. Open a terminal in the bin folder and execute the following commands, granting the scripts permission to execute:    
 ```bash
 chmod +x build     
 chmod +x run     
