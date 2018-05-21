@@ -23,7 +23,7 @@ Java (`jdk`)
 `run Main.class` - executes the java application
 
 *to debug or stress-test program (written in C++/Python/Java)*    
-*the required programs - a main program, a checker program, and a Random Input Generator (rig) program*    
+*the required programs - a main program, a checker program, and a random input generator (rig) program*    
 `debug main check.class rig.py`      
 `debug <main-program> <checker-program> <rig-program> [<number-of-inputs> [<time-limit-for-main>]]`     
 *tips for debug script*    
