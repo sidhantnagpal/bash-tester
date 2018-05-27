@@ -28,7 +28,7 @@ Java (`jdk`)
 `debug <main-program> <checker-program> <rig-program> [<number-of-inputs> [<time-limit-for-main>]]`     
 *tips for debug script*    
 1. square brackets denote optional arguments    
-2. the main program can be heurestically tested (for out-of-bounds error, runtime exceptions and other errors) against the rig program by setting main-program = checker-program    
+2. the `main-program` can be heurestically tested (for out-of-bounds error, runtime exceptions and other errors) against the `rig-program` program by setting `main-program = checker-program`.    
 *testing java program against python rig for 1000 cases and 2s time limit (per case) for the main (java) program*     
 `debug Main.class Main.class rig.py 1000 2`
 
