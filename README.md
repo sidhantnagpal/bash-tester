@@ -50,7 +50,7 @@ Add the following line at the end (assuming your bin folder is on the desktop):
 `export PATH=$PATH:~/Desktop/bin`    
 
 # How to Contribute?
-Feel free to ping me via [email](mailto:sidhantnagpal97@gmail.com)! :)     
+Feel free to ping me via [email](mailto:sidhantnagpal97@gmail.com).     
      
 # License
 MIT
