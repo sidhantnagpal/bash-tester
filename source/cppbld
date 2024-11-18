@@ -4,7 +4,9 @@ for var in "$@"
 do
     filename="${var%.*}"
 
-    clang++ -std=c++20 -O3 -fuse-ld=mold --sysroot=$MAMBA_ROOT_PREFIX/envs/toolenv/x86_64-conda-linux-gnu/sysroot -Wl,-rpath,$MAMBA_ROOT_PREFIX/envs/toolenv/lib $var -o $filename
+    clang-format -i $var
+
+    clang++ -std=c++23 -O3 -fuse-ld=mold --sysroot=$MAMBA_ROOT_PREFIX/envs/toolenv/x86_64-conda-linux-gnu/sysroot -Wl,-rpath,$MAMBA_ROOT_PREFIX/envs/toolenv/lib $var -o $filename
 
     if (($?!= 0)); then
 	exit $?
